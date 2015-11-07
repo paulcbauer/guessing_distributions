@@ -41,7 +41,18 @@ library(markdown)
                      c(None='',
                        'Double Quote'='"',
                        'Single Quote'="'"),
-                     '"')
+                     '"'),
+      
+      br(), br(),
+      
+      div("Shiny app by", 
+          a(href="http://paulcbauer.eu/",target="_blank", 
+            "Paul C. Bauer"),align="right", style = "font-size: 8pt"),
+      
+      
+      div("Shiny/R code:",
+          a(href="https://github.com/paulbauer/discrete_joint_distributions",
+            target="_blank","GitHub"),align="right", style = "font-size: 8pt")
       
         
         
