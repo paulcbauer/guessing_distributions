@@ -1,8 +1,8 @@
 name: Guessing_empirical_distributions
 account: paulcbauer
 server: shinyapps.io
-bundleId: 306020
+bundleId: 306023
 url: https://paulcbauer.shinyapps.io/Guessing_empirical_distributions
-when: 1446900383.58454
+when: 1446900846.97509
 asMultiple: FALSE
 asStatic: FALSE
