@@ -1,5 +1,4 @@
-# library(shiny)
-# library(foreign)
+
 
 # Counter
 # A server parameters
@@ -13,6 +12,14 @@ SP$npers <- 0
 
 
 shinyServer(function(input, output) {
+  # Counter
+  # shinyServer is Started up every time the domain is called.
+  # Use <<- to assign to the global server environment.
+  SP$npers <<- SP$npers + 1
+  output$hits <- renderText({
+    paste0("Pageviews: " , SP$npers)
+  })
+  
   default.data <-
     read.csv(
       "http://paulcbauer.eu/wp-content/uploads/2015/11/ess_ch.csv", header = TRUE, sep =
@@ -58,16 +65,7 @@ shinyServer(function(input, output) {
   
   
   
-  # Counter
-  # shinyServer is Started up every time the domain is called.
-  # Use <<- to assign to the global server environment.
-  SP$npers <<- SP$npers + 1
-  # shinyServer is Started up every time the domain is called.
-  # Use <<- to assign to the global server environment.
-  SP$npers <<- SP$npers + 1
-  output$hits <- renderText({
-    paste0("Pageviews: " , SP$npers)
-  })
+
   
   
   
