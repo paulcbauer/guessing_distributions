@@ -51,7 +51,7 @@ library(markdown)
       
       
       div("Shiny/R code:",
-          a(href="https://github.com/paulbauer/discrete_joint_distributions",
+          a(href="https://github.com/paulbauer/guessing_distributions/",
             target="_blank","GitHub"),align="right", style = "font-size: 8pt")
       
         
