@@ -5,17 +5,13 @@ library(markdown)
   
   shinyUI(fluidPage(
     
-  # Application title
+
   titlePanel("Guessing empirical distributions (univariate)"),
   
-  # Sidebar with controls to select the random distribution type
-  # and number of observations to generate. Note the use of the
-  # br() element to introduce extra vertical spacing
   sidebarLayout(
     sidebarPanel(  
       
-      # Counter
-      h5(textOutput("hits")),
+
       htmlOutput("selectUI"),
         selectInput("type", label = "Type of distribution:",
                     choices = c("Frequency distribution", "Relative frequency distribution"),

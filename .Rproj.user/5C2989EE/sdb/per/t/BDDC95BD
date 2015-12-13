@@ -1,0 +1,17 @@
+{
+    "contents" : "library(lattice)\nlibrary(latticeExtra)\nlibrary(markdown)\n\n  \n  shinyUI(fluidPage(\n    \n  # Application title\n  titlePanel(\"Guessing empirical distributions (univariate)\"),\n  \n  # Sidebar with controls to select the random distribution type\n  # and number of observations to generate. Note the use of the\n  # br() element to introduce extra vertical spacing\n  sidebarLayout(\n    sidebarPanel(  \n      \n      # Counter\n      h5(textOutput(\"hits\")),\n      htmlOutput(\"selectUI\"),\n        selectInput(\"type\", label = \"Type of distribution:\",\n                    choices = c(\"Frequency distribution\", \"Relative frequency distribution\"),\n                                selected = 1),\n        \n        sliderInput(\"x.scale\", label = \"Tip 3d plot:\",\n                    min = -100, max = 100, value = -84, step = 1),   \n        sliderInput(\"z.scale\", label = \"Turn 3d plot:\",\n                    min = -100, max = 100, value = 81, step = 1),\n        \n      tags$hr(),\n        fileInput('file1', 'Use your data (CSV File)',\n                  accept=c('text/csv', \n                           'text/comma-separated-values,text/plain', \n                           '.csv')),\n        checkboxInput('header', 'Header', TRUE),\n        radioButtons('sep', 'Separator',\n                     c(Comma=',',\n                       Semicolon=';',\n                       Tab='\\t'),\n                     ','),\n        radioButtons('quote', 'Quote',\n                     c(None='',\n                       'Double Quote'='\"',\n                       'Single Quote'=\"'\"),\n                     '\"'),\n      \n      br(), br(),\n      \n      div(\"Shiny app by\", \n          a(href=\"http://paulcbauer.eu/\",target=\"_blank\", \n            \"Paul C. Bauer\"),align=\"right\", style = \"font-size: 8pt\"),\n      \n      \n      div(\"Shiny/R code:\",\n          a(href=\"https://github.com/paulbauer/guessing_distributions/\",\n            target=\"_blank\",\"GitHub\"),align=\"right\", style = \"font-size: 8pt\")\n      \n        \n        \n      \n\n  ),\n\n mainPanel(\n      tabsetPanel(type = \"tabs\", \n        tabPanel(\"3D Plot\", plotOutput(\"plot2\")),\n        tabPanel(\"2D Plot\", plotOutput(\"plot\")),\n        tabPanel(\"Data\", dataTableOutput(outputId=\"table\")),\n        tabPanel(\"Explanation\", includeMarkdown(\"explanation.md\")),\n        tabPanel(\"About\", includeMarkdown(\"about.md\"))\n        \n\n      \n      )\n    )\n  )\n))\n\n\n\n\n\n\n\n\n\n\n\n\n\n      \n\n\n\n",
+    "created" : 1446907179134.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1032693490",
+    "id" : "BDDC95BD",
+    "lastKnownWriteTime" : 1446900768,
+    "path" : "C:/Users/paul/Google Drive/Packages/guessing_distributions/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
